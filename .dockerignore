@@ -1,0 +1,20 @@
+# What never enters the build context.
+#
+# The Dockerfile only COPYs pyproject.toml and src/, so nothing here is
+# strictly required today. It exists for the day someone writes `COPY . .`
+# — at which point .env, holding the OAuth client secret and the webhook
+# secret, would be baked into a layer and readable by anyone who pulls the
+# image. This file makes that mistake harmless instead of quiet.
+.env
+.env.*
+gateway.db
+*.db
+
+.venv/
+tests/
+**/__pycache__/
+*.egg-info/
+.pytest_cache/
+
+Dockerfile
+.dockerignore
