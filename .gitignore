@@ -22,7 +22,8 @@ reports/
 docs/Zipped/
 docs/Zipped.zip
 
-# Local API config (copy from backend/config/api.example.yaml; holds
-# host-specific values such as the LLM base URL).
-backend/config/api.yaml
-backend/config/api.json
+# The gateway's local database (GATEWAY_DATABASE_URL defaults to
+# sqlite:///./gateway.db): it holds sessions and saved settings, never commit it.
+*.db
+.env.*
+!.env.example

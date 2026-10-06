@@ -1,2 +1,0 @@
-[console_scripts]
-review-gateway = review_gateway.app:main
