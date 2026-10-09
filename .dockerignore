@@ -18,3 +18,11 @@ tests/
 
 Dockerfile
 .dockerignore
+
+# Jenkins build leftovers in the workspace: the image tars, scan reports,
+# test results and the deployment-repo clone. Kept out so the Push stage's
+# rebuild sees exactly the same context as the Build stage (same image).
+*.tar
+trivy-*.txt
+test-results/
+deploy/
